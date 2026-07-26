@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
   component: DetectorPage,
 });
 
-const STORAGE_KEY = "ai-debug-detector-sessions-v1";
+const STORAGE_KEY = "behavioral-ai-analyzer-sessions-v1";
 
 function DetectorPage() {
   const [text, setText] = useState("");
@@ -166,7 +166,7 @@ function DetectorPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `ai-debug-report-${Date.now()}.json`;
+    a.download = `behavioral-ai-analyzer-report-${Date.now()}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -176,7 +176,7 @@ function DetectorPage() {
     const margin = 40;
     let y = margin;
     doc.setFontSize(18);
-    doc.text("AI Debug Detector — Report", margin, y);
+    doc.text("Behavioral AI Analyzer — Analysis Report", margin, y);
     y += 24;
     doc.setFontSize(11);
     doc.setTextColor(120);
@@ -228,7 +228,7 @@ function DetectorPage() {
       doc.text(ev, margin + 10, y);
       y += ev.length * 12 + 4;
     });
-    doc.save(`ai-debug-report-${Date.now()}.pdf`);
+    doc.save(`behavioral-ai-analyzer-report-${Date.now()}.pdf`);
   };
 
   const compareSession = compareId
