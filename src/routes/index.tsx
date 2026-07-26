@@ -253,7 +253,12 @@ function DetectorPage() {
           </div>
           <div>
             <h1 className="text-lg font-semibold leading-tight">
-              Behavioral AI&nbsp;<span className="gradient-text">Analyzer</span>
+              Behavioral AI&nbsp;<span
+className={theme === "light"
+? "text-primary"
+: "gradient-text"}
+>
+  Analyzer</span>
             </h1>
             <p className="text-xs text-muted-foreground">
               Behavioral analysis of how text is written — not just what it says.
@@ -302,7 +307,22 @@ function DetectorPage() {
                 onSelect={onSelect}
                 onClick={onClick}
                 placeholder="Start typing, paste, or drop a .txt file here…"
-                className="w-full min-h-64 bg-black/20 border border-white/10 rounded-xl p-4 text-sm leading-relaxed outline-none focus:border-primary/60 resize-y font-mono"
+                className="
+w-full
+min-h-64
+bg-card
+text-foreground
+border
+border-border
+rounded-xl
+p-4
+text-sm
+leading-relaxed
+outline-none
+focus:border-primary
+resize-y
+font-mono
+"
                 spellCheck={false}
               />
               {dragging && (
@@ -325,21 +345,21 @@ function DetectorPage() {
               </button>
               <button
                 onClick={reset}
-                className="px-3 py-2 rounded-lg text-sm glass hover:bg-white/10 transition"
+                className="px-3 py-2 rounded-lg text-sm glass hover:bg-primary/10 transition"
               >
                 Reset
               </button>
               <button
                 onClick={exportJson}
                 disabled={!analyzed}
-                className="px-3 py-2 rounded-lg text-sm glass hover:bg-white/10 transition disabled:opacity-40"
+                className="px-3 py-2 rounded-lg text-sm glass hover:bg-primary/10 transition disabled:opacity-40"
               >
                 Export JSON
               </button>
               <button
                 onClick={exportPdf}
                 disabled={!analyzed}
-                className="px-3 py-2 rounded-lg text-sm glass hover:bg-white/10 transition disabled:opacity-40"
+                className="px-3 py-2 rounded-lg text-sm glass hover:bg-primary/10 transition disabled:opacity-40"
               >
                 Export PDF
               </button>
@@ -445,7 +465,7 @@ function DetectorPage() {
                     className={`p-3 rounded-lg border cursor-pointer transition ${
                       compareId === h.id
                         ? "border-primary/60 bg-primary/10"
-                        : "border-white/10 hover:bg-white/5"
+                        : "border-border hover:bg-primary/10"
                     }`}
                     onClick={() =>
                       setCompareId(compareId === h.id ? null : h.id)

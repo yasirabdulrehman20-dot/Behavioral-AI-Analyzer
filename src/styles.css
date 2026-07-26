@@ -67,26 +67,36 @@
 }
 
 .light {
-  --background: oklch(0.98 0.005 260);
-  --foreground: oklch(0.18 0.02 265);
+  --background: oklch(0.99 0.002 260);
+  --foreground: oklch(0.12 0.01 260);
+
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 265);
+  --card-foreground: oklch(0.20 0.02 265);
+
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 265);
-  --primary: oklch(0.55 0.18 200);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.94 0.01 260);
-  --secondary-foreground: oklch(0.18 0.02 265);
-  --muted: oklch(0.95 0.01 260);
-  --muted-foreground: oklch(0.45 0.02 260);
-  --accent: oklch(0.55 0.22 310);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.6 0.22 20);
-  --border: oklch(0.18 0.02 265 / 12%);
-  --input: oklch(0.18 0.02 265 / 12%);
-  --ring: oklch(0.55 0.18 200);
-  --glass: oklch(1 0 0 / 60%);
-  --glass-border: oklch(0.18 0.02 265 / 10%);
+  --popover-foreground: oklch(0.20 0.02 265);
+
+  --primary: oklch(0.52 0.22 255);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.96 0.005 260);
+  --secondary-foreground: oklch(0.20 0.02 265);
+
+  --muted: oklch(0.97 0.003 260);
+  --muted-foreground: oklch(0.50 0.02 260);
+
+  --accent: oklch(0.65 0.18 290);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.62 0.22 20);
+
+  --border: oklch(0.82 0.005 260);
+  --input: oklch(0.90 0.005 260);
+
+  --ring: oklch(0.60 0.18 250);
+
+  --glass: oklch(1 0 0);
+--glass-border: oklch(0.88 0.005 260);
 }
 
 @layer base {
@@ -96,26 +106,27 @@
     color: var(--color-foreground);
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
-  body {
-    background-image:
-      radial-gradient(1200px 600px at 10% -10%, oklch(0.72 0.18 190 / 0.14), transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, oklch(0.68 0.22 310 / 0.12), transparent 60%),
-      radial-gradient(700px 500px at 50% 120%, oklch(0.72 0.18 240 / 0.08), transparent 60%);
+ body {
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, oklch(0.72 0.18 190 / 0.14), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, oklch(0.68 0.22 310 / 0.12), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, oklch(0.72 0.18 240 / 0.08), transparent 60%);
     background-attachment: fixed;
     min-height: 100vh;
   }
 }
 
 @utility glass {
-  background: var(--color-glass);
-  backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid var(--color-glass-border);
+  background: color-mix(in srgb, var(--color-card) 95%, white 5%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 @utility glass-strong {
-  background: color-mix(in oklab, var(--color-card) 70%, transparent);
-  backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid var(--color-glass-border);
+  background: var(--color-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 @utility gradient-text {
@@ -123,4 +134,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+html.light body {
+  background: var(--color-background) !important;
+  background-image: none !important;
 }

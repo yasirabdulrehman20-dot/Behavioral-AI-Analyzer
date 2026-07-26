@@ -79,8 +79,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Behavioral AI Analyzer" },
       { name: "description", content: "Real-time behavioral analysis that scores human vs. AI vs. pasted input from your typing rhythm, edits, and content signals — 100% local." },
-      { property: "og:title", content: "AI Debug Detector" },
-      { property: "og:description", content: "Score human vs. AI vs. pasted input from typing behavior and content signals. Runs entirely in your browser." },
+      { property: "og:title", content: "Behavioral AI Analyzer" },
+      {
+  property: "og:description",
+  content:
+    "Analyze typing behavior, editing patterns, pauses, and paste events to distinguish human-written and AI-assisted content. 100% local and privacy-first.",
+},
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
