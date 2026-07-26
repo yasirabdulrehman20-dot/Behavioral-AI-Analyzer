@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Debug Detector — See how text was written, not just what was written" },
+      { title: "Behavioral AI Analyzer" },
       { name: "description", content: "Real-time behavioral analysis that scores human vs. AI vs. pasted input from your typing rhythm, edits, and content signals — 100% local." },
       { property: "og:title", content: "AI Debug Detector" },
       { property: "og:description", content: "Score human vs. AI vs. pasted input from typing behavior and content signals. Runs entirely in your browser." },
