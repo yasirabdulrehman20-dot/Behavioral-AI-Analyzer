@@ -3,7 +3,7 @@
 A privacy-focused tool that analyzes writing behavior patterns.
 
 ## Live Demo
-https://your-link.vercel.app
+[https://your-link.vercel.app](https://behavioral-ai-analyzer.vercel.app/)
 
 ## Features
 - Typing behavior analysis
